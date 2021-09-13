@@ -1,34 +1,70 @@
-.App {
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #282937;
+  font-family: 'Helvetica', 'Helvetica Nueue', sans-serif;
+}
+
+.app {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #fafafa;
   text-align: center;
+  transition: background 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app.break{
+  background: #CB2918;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h1 {
+  margin-bottom: 1rem;
+}
+
+.timer-circle {
+  width: 20rem;
+  max-width: 20rem;
+  max-height: 20rem;
+  position: relative;
+  display: grid;
+}
+
+.timer-circle::before {
+    border: 3px solid #fafafa;
+    border-radius: 100%;
+    animation: 1s linear infinite alternate abberation, 4s linear infinite spin;
+    padding-top: 100%;
+    content: "";
+    position: relative;
+    pointer-events: none;
+    z-index: 1; 
+}
+ 
+
+.time-circle.paused::before {
+    animation: none;
+    transition: 0.3s transform;
+}
+
+
+@keyframes abberation {
+  from {
+    box-shadow: 0 0 0 0 #CB2918, 0 0 0 0 #56719A;
+  }
+  to {
+    box-shadow: 0.25rem 0.125rem 0 0 #CB2918, -0.25rem -0.125rem 0 0 #56719A;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,3 +72,58 @@
     transform: rotate(360deg);
   }
 }
+
+.time {
+  padding-top: 1rem; 
+  font-size: 5rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  grid-gap: 9rem;
+}
+
+.play-pause, .reset{
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: #6C7CB3;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: white;
+}
+
+
+#settings{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  gap: 4rem;
+}
+
+#settings h3{
+  margin-bottom: 1rem;
+}
+
+.adjust{
+  display:flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+
