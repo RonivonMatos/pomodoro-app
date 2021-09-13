@@ -81,6 +81,8 @@ function App() {
           <button className ="reset" onClick={() =>{
             setIsRunning(false)
             setTimer(1500)
+            setSessionLength(25)
+            setBreakLength(5)
           }}>
             <FaUndo />
           </button>
