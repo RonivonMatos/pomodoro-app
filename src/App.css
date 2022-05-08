@@ -21,6 +21,8 @@ body {
   transition: background 0.3s;
 }
 
+
+
 .app.break{
   background: #CB2918;
 }
@@ -30,11 +32,10 @@ h1 {
 }
 
 .timer-circle {
-  width: 20rem;
-  max-width: 20rem;
   max-height: 20rem;
   position: relative;
   display: grid;
+  justify-self: center;
 }
 
 .timer-circle::before {
@@ -53,7 +54,7 @@ h1 {
     animation: none;
     transition: 0.3s transform;
 }
-
+ 
 
 @keyframes abberation {
   from {
@@ -126,4 +127,3 @@ h1 {
   justify-content: space-around;
   font-size: 1.5rem;
 }
-
