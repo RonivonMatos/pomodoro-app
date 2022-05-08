@@ -13,4 +13,8 @@ Decidi utilizar a biblioteca ReactJS e dentro dela resolvi me dedicar especialme
 
 ## Demo
 
+<<<<<<< HEAD
 https://inspiring-jennings-7bfcf4.netlify.app/
+=======
+https://inspiring-jennings-7bfcf4.netlify.app/
+>>>>>>> b02e3a6bc3526ba7657bb8a49512ff605c078464
